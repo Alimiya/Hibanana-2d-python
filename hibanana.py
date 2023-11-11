@@ -171,11 +171,11 @@ class Enemy2:
         self.dy = min(self.dy + 1, 3)
         if is_wall(self.x, self.y + 8) or is_wall(self.x + 7, self.y + 8):
             if self.direction < 0 and (
-                    is_wall(self.x - 1, self.y + 4) or not is_wall(self.x - 1, self.y + 8)
+                is_wall(self.x - 1, self.y + 4) or not is_wall(self.x - 1, self.y + 8)
             ):
                 self.direction = 1
             elif self.direction > 0 and (
-                    is_wall(self.x + 8, self.y + 4) or not is_wall(self.x + 7, self.y + 8)
+                is_wall(self.x + 8, self.y + 4) or not is_wall(self.x + 7, self.y + 8)
             ):
                 self.direction = -1
         self.x, self.y, self.dx, self.dy = push_back(self.x, self.y, self.dx, self.dy)
@@ -228,8 +228,8 @@ class Enemy3Bullet:
 
 class App:
     def __init__(self):
-        pyxel.init(128, 128, title="Pyxel Platformer")
-        pyxel.load("assets/platformer.pyxres")
+        pyxel.init(128, 128, title="Hibanana")
+        pyxel.load("assets/textures.pyxres")
 
         # Change enemy spawn tiles invisible
         pyxel.image(0).rect(0, 8, 24, 8, TRANSPARENT_COLOR)
